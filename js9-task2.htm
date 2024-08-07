@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>task2</title>
+        <style>
+            p{
+                padding: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="a"></p>
+        <p id="b"></p>
+        <p id="c"></p>
+
+        <script>
+            const a = document.getElementById("a")
+            const b = document.querySelector("#b")
+            const c = document.querySelector("#c")
+
+            let arr = [-4, -3, 1, 2, 44, 76, 33, 85, 3, 5, 6, 7, 8, 9, 22, 35]
+
+
+            function sortA(){
+                let min = arr[0]
+                for (let i = 0; i < arr.length; i++) {
+                    for (let j = 0; j < arr.length; j++) {
+                        if(arr[i] < arr[j]){
+                            let temp = arr[i]
+                            arr[i] = arr[j]
+                            arr[j] = temp
+                        }
+                    }
+                }
+            } 
+            c.innerHTML = ' oz yazdigim: '+(arr);
+
+
+               arr.sort(function(a, b){return a - b})
+               a.innerHTML = arr
+                
+
+               arr.sort(function(a, b){return b - a})
+               b.innerHTML = arr
+
+
+
+            
+        </script>
+    </body>
+</html>

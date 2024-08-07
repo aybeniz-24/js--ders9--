@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [4, 65, 6, 78, 43, 1, 1, 68, 9, 5, -69];
+
+        function sortArr(a) {
+            for (let i = 0; i < a.length; i++) {
+                for (let j = i + 1; j < a.length; j++) {  // j = i + 1 olmalıdır
+                   if (a[i] > a[j]) {  // a[i] > a[j] olmalıdır
+                        let ara = a[i];
+                        a[i] = a[j];
+                        a[j] = ara;
+                   }
+                }
+            }
+            return a;
+        }
+
+        function getMin(a) {
+            let minVal = a[0]; 
+            for (let i = 1; i < a.length; i++) { 
+                if (a[i] < minVal) { 
+                    minVal = a[i];
+                }
+            }
+            return minVal; 
+        }
+
+        console.log(getMin(arr));  
+        console.log(sortArr(arr)); 
+    </script>
+</body>
+</html>

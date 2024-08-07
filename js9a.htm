@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>js9a</title>
+        <style>
+            table{
+                border-collapse: collapse;
+            }
+            td, tr{
+                padding: 10px;
+                border: 1px solid #000;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="oyun"></table>
+        <script>
+            const oyun = document.querySelector("#oyun")
+           
+           
+            const arr = ['']
+            for (let i = 1; i <=15; i++)arr.push(i)
+            arr.sort(function(a, b) {return rand(-100, 100)})
+        
+
+            
+            
+            let x = 0
+            let kod = ''
+            for (let i = 1; i <= 4; i++) {
+               kod += '<tr>'
+                    for (let j = 1; j <= 4; j++) {
+                        kod += `<td>${arr[x++]}</td>`
+                    }
+               kod += '</tr>'
+            }
+         
+            oyun.innerHTML = kod
+
+            function rand(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+        </script>
+    </body>
+</html>
